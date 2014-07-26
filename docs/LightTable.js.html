@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: LightTable.js</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Source: LightTable.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/**
+ * LightTable 모듈 빌드 함수
+ * @author    ju.uyeong&lt;ju.uyeong@nhn.com>
+ * @version   0.0.2
+ * @copyright 2014 UIT Licensed under the MIT license.
+ * @param {Array.&lt;string>} images 배열로 선언한 이미지 파일이 있는 URL
+ * @returns {LightTableComponents}
+ * @example
+ * var lightTable = LightTable([
+ *     './img/demo-0.png',
+ *     './img/demo-1.png',
+ *     './img/demo-2.png',
+ *     './img/demo-3.png',
+ * ]);
+ */
+function LightTable(images){
+
+    /**
+     * 라이트 테이블 반환 모델
+     * @typedef {Object} LightTableModels
+     * @property {lt.model.Images} images
+     * @property {lt.model.Position} navigationPosition
+     * @property {lt.model.Position} moverPosition
+     */
+
+    /**
+     * 라이트 테이블 반환 컨트롤러
+     * @typedef {Object} LightTableControllers
+     * @property {lt.controller.Opaciter} opaciter
+     * @property {lt.controller.Mover} mover
+     * @property {lt.controller.Images} images
+     * @property {lt.controller.Guide} guide
+     * @property {lt.controller.Dragger} opaciterDragger
+     * @property {lt.controller.Dragger} moverDragger
+     */
+
+    /**
+     * 라이트 테이블 반환 객체
+     * @typedef {Object} LightTableComponents
+     * @property {LightTableModels} models
+     * @property {LightTableControllers} controllers
+     */
+
+    // assign elements
+    var lightTableElement = document.querySelector('#light-table'),
+        naviElement = lightTableElement.querySelector('.lt-navigation'),
+        opacityElement = lightTableElement.querySelector('.lt-opacity'),
+        moverElement = lightTableElement.querySelector('.lt-mover'),
+        imagesElement = lightTableElement.querySelector('.lt-images'),
+        guideElement = lightTableElement.querySelector('.lt-guide'),
+        searchButtonElement = lightTableElement.querySelector('.lt-search button'),
+        naviDragButtonElement = naviElement.querySelector('.lt-dragger button'),
+        moverDragButtonElement = moverElement.querySelector('.lt-dragger button'),
+
+    // init models
+        imagesModel = new lt.model.Images('LightTableImages', images),
+        navPositionModel = new lt.model.Position('LightTableNavigation'),
+        movPositionModel = new lt.model.Position('LightTableMover'),
+
+    // init controllers
+        opaciterController = new lt.controller.Opaciter(opacityElement, imagesModel),
+        moverController = new lt.controller.Mover(moverElement, imagesModel),
+        imagesController = new lt.controller.Images(searchButtonElement, imagesElement, imagesModel),
+        guideController = new lt.controller.Guide(guideElement, imagesModel),
+
+    // init draggers
+        opaciterDragController = new lt.controller.Dragger(naviElement, naviDragButtonElement, navPositionModel),
+        moverDragController = new lt.controller.Dragger(moverElement, moverDragButtonElement, movPositionModel);
+
+    // returns models and controllers
+    return {
+        models : {
+            images : imagesModel,
+            navigationPosition : navPositionModel,
+            moverPosition : movPositionModel
+        },
+        controllers : {
+            opaciter : opaciterController,
+            mover : moverController,
+            images : imagesController,
+            guide : guideController,
+            opaciterDragger : opaciterDragController,
+            moverDragger : moverDragController
+        }
+    };
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="lt.controller.Dragger.html">Dragger</a></li><li><a href="lt.controller.Guide.html">Guide</a></li><li><a href="lt.controller.Images.html">Images</a></li><li><a href="lt.controller.Mover.html">Mover</a></li><li><a href="lt.controller.Opaciter.html">Opaciter</a></li><li><a href="lt.helper.Observer.html">Observer</a></li><li><a href="lt.model.Images.html">Images</a></li><li><a href="lt.model.Opacity.html">Opacity</a></li><li><a href="lt.model.Path.html">Path</a></li><li><a href="lt.model.Position.html">Position</a></li></ul><h3>Namespaces</h3><ul><li><a href="lt.controller.html">controller</a></li><li><a href="lt.helper.html">helper</a></li><li><a href="lt.model.html">model</a></li><li><a href="window.lt.html">lt</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LightTable">LightTable</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sat Jul 26 2014 15:04:55 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

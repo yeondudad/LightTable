@@ -1,0 +1,195 @@
+#light-table button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Helvetica, Arial;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#light-table .lt-navigation {
+    width: 50px;
+    height: 240px;
+    left: 0;
+    top: 0;
+    z-index: 10100;
+    position: fixed;
+}
+
+#light-table .lt-navigation .lt-search,
+#light-table .lt-navigation .lt-opacity,
+#light-table .lt-navigation .lt-dragger,
+#light-table .lt-mover button {
+    width: 40px;
+    height:40px;
+    left: 5px;
+    background: #02779E;
+    position: absolute;
+}
+
+#light-table .lt-navigation .lt-search {
+    top: 5px;
+}
+
+#light-table .lt-navigation .lt-opacity {
+    width: 10px;
+    height: auto;
+    padding: 15px;
+    top: 50px;
+    bottom: 50px;
+}
+
+#light-table .lt-navigation .lt-dragger {
+    bottom: 5px;
+}
+
+#light-table .lt-navigation .lt-mover {
+    height: 56px;
+    bottom: 50px;
+}
+
+#light-table .lt-navigation .lt-opacity-bar {
+    width:10px;
+    height: 100%;
+    border-radius: 5px;
+    background: #025872;
+    position:relative;
+}
+
+#light-table .lt-navigation .lt-opacity-area {
+    top: 0;
+    bottom: 20px;
+    position: absolute;
+}
+
+#light-table .lt-navigation .lt-search button,
+#light-table .lt-navigation .lt-dragger button,
+#light-table .lt-navigation .lt-mover button {
+    width: 100%;
+}
+
+#light-table .lt-navigation .lt-search button,
+#light-table .lt-navigation .lt-dragger button,
+#light-table .lt-navigation .lt-mover button {
+    line-height: 43px !important;
+}
+
+#light-table .lt-navigation .lt-dragger button {
+    cursor: move;
+}
+
+#light-table .lt-navigation .lt-opacity-bar button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin-left: -5px;
+    position: absolute;
+}
+
+#light-table .lt-navigation .lt-opacity-bar span {
+    display: block;
+    margin-left: 3000px;
+}
+
+#light-table .lt-mover {
+    width: 140px;
+    height: 140px;
+    position: fixed;
+    z-index:10100;
+}
+
+#light-table .lt-mover button[data-role=image-pos-up] {
+    top: 5px;
+    left: 50px;
+}
+
+#light-table .lt-mover button[data-role=image-pos-right] {
+    top: 50px;
+    left: 95px;
+}
+
+#light-table .lt-mover button[data-role=image-pos-down] {
+    top: 95px;
+    left: 50px;
+}
+
+#light-table .lt-mover button[data-role=image-pos-left] {
+    top : 50px;
+    left: 5px;
+}
+
+#light-table .lt-mover .lt-dragger {
+    top: 50px;
+    left: 45px;
+    clear: both;
+    position: relative;
+}
+
+#light-table .lt-images {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+    z-index:10105;
+}
+
+#light-table .lt-images:before {
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    position:absolute;
+    content:''
+}
+
+#light-table .lt-images ul {
+    width:10000%;
+    height:100%;
+    padding:0;
+    margin:0;
+    *zoom:1;
+}
+
+#light-table .lt-images ul:after {
+    display:block;
+    clear:both;
+    content:''
+}
+
+#light-table .lt-images li {
+    padding:20px;
+    display:inline-block;
+    float:left;
+    position:relative;
+    text-align:center
+}
+
+#light-table .lt-images li img,
+#light-table .lt-images li button {
+    width:100%
+}
+
+#light-table .lt-images li button {
+    background: #02779E;
+    line-height: 25px;
+}
+
+#light-table .lt-guide,
+#light-table .lt-guide img {
+    width: 100%;
+}
+
+#light-table .lt-guide {
+    height: auto;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10050;
+}

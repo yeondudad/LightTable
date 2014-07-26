@@ -1,0 +1,181 @@
+/* Common */
+.u_comment_box{position:relative;background:#fff;color:#000;-webkit-text-size-adjust:none}
+.u_comment_box .u_hc{visibility:hidden;overflow:hidden;position:absolute;left:-999em;width:0;height:0;font-size:0;line-height:0}
+.u_comment_box,.u_comment_box p,.u_comment_box h2,.u_comment_box ul,.u_comment_box li,.u_comment_box form,.u_comment_box fieldset,.u_comment_box legend,.u_comment_box input,.u_comment_box textarea{margin:0;padding:0;font-family:Helvetica}
+.u_comment_box,.u_comment_box input,.u_comment_box textarea{font-size:14px;line-height:1.25em}
+.s .u_comment_box,.s .u_comment_box input,.s .u_comment_box textarea,.s.s.s.u_comment_box fieldset{border:0}
+.u_comment_box ul{list-style:none}
+.u_comment_box em{font-style:normal}
+.u_comment_box a{color:#000;text-decoration:none}
+.u_comment_box b{font-weight:bold}
+.u_comment_box .u_bar{display:inline-block;position:relative;top:1px;width:1px;height:11px;margin:0 2px 0 4px;background:#c6c7c9;text-indent:-999em}
+
+.u_comment_box .u_score_star,
+.u_comment_box .u_star,
+.u_comment_box .u_score_min,
+.u_comment_box .u_score_plus,
+.u_comment_box .u_btn_del,
+.u_comment_box .u_comment_lst .bt_arw:after,
+.u_comment_box .u_comment_write:after,
+.u_comment_box .u_comment_writebox .u_btm_txt:after,
+.u_comment_box .u_comment_recomm a,
+.u_comment_box .u_depth,
+.u_comment_box .u_pg_area::before,
+.u_comment_box .u_pg_top,
+.u_comment_box .u_pg2_prev,
+.u_comment_box .u_pg2_next,
+.u_comment_box .u_comment_reply_list_paging a,
+.u_comment_box .u_comment_lst_count span::after,
+.u_comment_box .u_back::before{background:url(http://static.naver.net/m/common/comment/sp_u_comment_w.png) no-repeat;-webkit-background-size:250px 250px;background-size:250px 250px}
+
+/* 더보기 */
+.u_comment_box .u_pg,.u_comment_box .u_pg_lod{background:#e6e7e7;background:-webkit-gradient(linear,0 0,0 100%,from(#f9f9f9),color-stop(.3,#f6f6f6),color-stop(.8,#e7eae9),to(#dde3e4));-webkit-box-shadow:inset 0 1px 0 #fefefe,inset 0 -1px 0 #d8dada}
+.u_comment_box .u_pg{display:table;position:relative;width:100%;height:45px;margin-top:-1px;border-top:1px solid #dfdfdf;border-bottom:1px solid #cecece;text-align:center}
+.u_comment_box .u_pg_btn{display:table-cell;overflow:hidden;border-right:1px solid #d3d3d3;line-height:1em;;text-shadow:0 1px 0 #fff}
+.u_comment_box .u_pg_area{position:relative;display:table;height:43px;margin:0 auto;padding-left:23px;font-size:1em}
+.u_comment_box .u_pg_area::before{display:block;position:absolute;top:0;left:0;width:14px;height:43px;background-position:0 -137px;content:''}
+.u_comment_box .u_pg_wrap{display:block;position:relative}
+.u_comment_box .u_pg_lod{display:block;position:absolute;top:0;width:21px;height:43px;margin-left:-29px}
+.u_comment_box .u_pg_lodic{display:inline-block;overflow:hidden;width:22px;height:22px;margin-top:11px;text-indent:-999em}
+.u_comment_box .u_pg_lodic{background:url(http://static.naver.net/m/common/comment/ico_lod2.gif) no-repeat 50% 50%;-webkit-background-size:22px 22px;background-size:22px 22px}
+.u_comment_box .u_pg_txt{display:table-cell;font-size:13px;line-height:1.25em;vertical-align:middle}
+.u_comment_box .u_pg_txt b{font-size:14px}
+.u_comment_box .u_pg_cnt{font-size:12px;font-weight:bold;color:#6c7178;line-height:1.25em}
+.u_comment_box .u_pg_total{color:#94989f}
+.u_comment_box .u_pg_end .u_pg_btn{background:none;background-color:#fafafa;-webkit-box-shadow:none}
+.u_comment_box .u_pg_end .u_pg_area::before{display:none}
+.u_comment_box .u_pg_top{display:table-cell;position:relative;width:53px;padding-top:18px;border-left:1px solid #fdfdfd;background-position:50% -233px;font-size:.8em;color:#707070;vertical-align:top}
+
+/* 안드로이드 더보기 */
+.u_comment_box .u_pg2{position:relative;padding:15px 0;border-top:1px solid #dfdfdf;font-size:12px;text-align:center;white-space:nowrap}
+.u_comment_box .u_pg2_btn{display:inline-block;width:49px;height:27px;border:1px solid #acacac;border-radius:3px;background-color:#fff;font-weight:bold;line-height:28px;color:#2d3038}
+.u_comment_box .u_pg2_prev,.u_comment_box .u_pg2_next{display:inline-block;font-size:13px}
+.u_comment_box .u_pg2_prev{position:absolute;top:7px;left:15px;padding-left:12px;background-position:12px -177px}
+.u_comment_box .u_pg2_next{position:absolute;top:7px;right:15px;padding-right:12px;background-position:-20px -177px}
+.u_comment_box .u_pg2_pg{display:inline-block;font-size:14px;font-weight:bold;color:#6c7178}
+.u_comment_box .u_pg2_total{color:#94989f}
+
+/* best comment paging */
+.u_comment_box .u_comment_reply_list_paging{position:relative;padding:11px 0 2px;margin:0 -15px;border-top:1px solid #e5e5e5;color:#999;text-align:center}
+.u_comment_box .u_comment_reply_list_paging a{display:inline-block;overflow:hidden;width:35px;height:24px;border:1px solid #b6b6b6;text-indent:-999px;vertical-align:top;-webkit-border-radius:1px;border-radius:1px}
+.u_comment_box .u_comment_reply_list_paging a.u_rpg_pre{background-position:-146px 6px}
+.u_comment_box .u_comment_reply_list_paging a.u_rpg_next{background-position:-173px 6px}
+.u_comment_box .u_comment_reply_list_paging a.u_rpg_dim{opacity:.3}
+.u_comment_box .u_comment_reply_list_paging .u_comment_reply_page{display:inline-block;width:82px;font-size:13px;line-height:24px}
+.u_comment_box .u_comment_reply_list_paging .u_comment_reply_page em{margin-right:-1px;color:#494949;font-weight:normal}
+.u_comment_box .u_comment_reply_list_paging .u_comment_reply_page span{position:absolute;z-index:-1;color:transparent;font-size:1px}
+
+/* layout */
+.u_comment_box .u_btn_write{display:inline-block;height:27px;padding:0 7px 0 9px;border-radius:3px;font-size:13px;line-height:27px}
+.u_comment_box .u_section{position:relative;height:38px;background:#4d74f4;border-bottom:1px solid #aaaaab}
+.u_comment_box .u_section h2{display:inline-block;margin:11px 7px 0 15px;font-size:15px;color:#fff}
+.u_comment_box .u_section .u_count{font-size:16px;color:#fff;opacity:.8}
+.u_comment_box .u_section .u_btn_write{position:absolute;top:4px;right:10px;border:1px solid #acacac;background-color:#fff;font-weight:bold}
+.u_comment_box .u_back{position:relative;height:42px;background:#f0f0f4;line-height:42px}
+.u_comment_box .u_back::before{display:inline-block;position:absolute;top:10px;left:10px;width:22px;height:22px;border:1px solid #b4b4b4;border-radius:3px;background-color:#fff;background-position:6px -181px;content:''}
+.u_comment_box .u_back a{margin-left:39px;text-shadow:0 1px 0 #fff}
+.u_comment_box .u_scorebox{display:none;position:relative;padding:10px 49px 8px 10px;margin:0 -10px;border-top:1px solid #d4d4d7;text-align:center;white-space:nowrap}
+.u_comment_box .u_scorebox:before{display:block;position:absolute;top:0;left:0;width:100%;height:0;border-bottom:1px solid #f8f8fa;content:''}
+.u_comment_box .u_scorebox span{display:inline-block;overflow:hidden}
+.u_comment_box .u_scorebox .u_score_star{width:147px;height:28px;background-position:-103px -116px;text-align:left}
+.u_comment_box .u_scorebox .u_star{display:block;height:100%;background-position:-103px -147px;text-indent:-999px}
+.u_comment_box .u_scorebox .u_score{margin:0 4px 0 8px;font-size:23px;font-weight:normal;;line-height:28px;text-align:left;vertical-align:top}
+.u_comment_box .u_scorebox a{display:inline-block;overflow:hidden;width:37px;height:26px;border:1px solid #b4b4b4;background-color:#fff;text-indent:-999px;-webkit-bordr-radius:3px;border-radius:3px}
+.u_comment_box .u_score_min{float:left;background-position:-186px -185px}
+.u_comment_box .u_score_plus{position:absolute;top:10px;right:10px;background-position:-225px -185px}
+.u_comment_box .u_comment_write{overflow:hidden;position:relative}
+.u_comment_box .u_comment_writebox{position:relative;z-index:20;padding:1px 10px 1px;border-bottom:2px solid #3c5ecf;background:#4d74f4}
+.u_comment_box .u_comment_writebox .u_writebox{position:relative;padding:7px;padding-bottom:9px;margin-bottom:48px;background-color:#fff}
+.u_comment_box .u_comment_writebox .u_lbl_write{position:absolute;top:7px;left:7px;margin-right:7px;font-size:14px;color:#848996}
+.u_comment_box .u_comment_writebox .u_write_text{display:block;margin-bottom:22px}
+.u_comment_box .u_comment_writebox .u_write_text textarea{width:96%;border:none;background-color:transparent;font-size:14px;color:#000;-webkit-appearance:none;resize:none}
+.u_comment_box .u_comment_writebox .u_write_text textarea:active + label,
+.u_comment_box .u_comment_writebox .u_write_text textarea:focus + label{display:none}
+.u_comment_box .u_comment_writebox .u_data{position:absolute;right:7px;bottom:5px;font-size:13px;font-weight:bold;color:#aaafbb}
+.u_comment_box .u_comment_writebox .u_data em{color:#5a6770}
+.u_comment_box .u_comment_writebox .u_btn_upload{display:block;position:absolute;bottom:8px;right:0;border-radius:4px;background-color:#fff}
+.u_comment_box .u_comment_writebox .u_btn_w{width:63px;height:32px;border:1px solid #b0b9c4;background-color:#bec7d1;font-size:14px;font-weight:bold;text-align:center;color:#fff;text-shadow:0px 0px 1px rgba(0,0,0,.75);-webkit-border-radius:0px;-webkit-appearance:none}
+.u_comment_box .u_comment_writebox .u_btn_more{display:block;overflow:hidden;border-top:1px solid #c9c9c9}
+.u_comment_box .u_comment_writebox .u_btn_wrap{display:block;position:relative;padding:0 0 0;height:28px;border-top:1px solid #fff;text-align:center}
+.u_comment_box .u_comment_writebox .u_btn_wrap .u_btm_txt{display:inline-block;position:relative;height:28px;padding-right:14px;font-size:13px;line-height:29px;font-weight:bold;color:#525252;text-shadow:0 1px 0 #fff}
+.u_comment_box .u_comment_writebox .u_btn_wrap .u_btm_txt:after{position:absolute;right:0;top:50%;width:8px;height:5px;margin-top:-2px;background-position:-224px -17px;content:''}
+.u_comment_box .u_comment_writebox .u_btn_wrap .u_btm_txt.open:after{background-position:-224px -17px}
+.u_comment_box .u_comment_writebox .u_btn_wrap .u_btm_txt.close:after{background-position:-214px -17px}
+.u_comment_box .u_comment_lst .u_comment_writebox .u_btn_cancel{visibility:hidden;overflow:hidden;position:absolute;left:-999em;width:0;height:0;font-size:0;line-height:0}
+.u_comment_box .u_comment_lst li{position:relative;border-top:1px solid #b2b2b2}
+.u_comment_box .u_comment_lst .u_comment_del{margin:9px 20px 9px 15px;font-size:13px;line-height:14px;color:#848996}
+.u_comment_box .u_comment_lst .u_score_area{display:none;padding:0 14px 4px;margin-top:-1px}
+.u_comment_box .u_comment_lst .u_score_area span{display:inline-block;overflow:hidden}
+.u_comment_box .u_comment_lst .u_score_area .u_score_star{width:77px;height:16px;margin-right:5px;background-position:-103px -177px}
+.u_comment_box .u_comment_lst .u_score_area .u_star{background-position:-103px -196px;text-indent:-999px}
+.u_comment_box .u_comment_lst .u_score_area .u_score{font-size:15px;color:#000;font-weight:bold}
+.u_comment_box .u_comment_lst .u_comment_info{margin:9px 20px 4px 15px;font-size:11px;line-height:14px;color:#5a6770}
+.u_comment_box .u_comment_lst .u_comment_info a{color:#5a6770}
+.u_comment_box .u_comment_lst .u_comment_info .u_name{font-size:13px}
+.u_comment_box .u_comment_lst .u_comment_info a.u_report{font-size:12px}
+.u_comment_box .u_comment_lst .u_comment_info .u_name,.u_comment_lst .u_comment_text .u_name{font-weight:bold}
+.u_comment_box .u_comment_lst .u_comment_text{margin:0 15px;font-size:15px;line-height:20px;color:#2d3038;word-break:break-all}
+.u_comment_box .u_comment_lst .u_btn_del{display:block;position:absolute;top:8px;right:12px;width:13px;height:13px;background-position:-45px -1px;text-indent:-999em}
+.u_comment_box .u_comment_lst .u_comment_reply_num{font-size:14px;font-weight:bold;color:#000}
+.u_comment_box .u_comment_lst .u_comment_recomm{float:right;position:relative;top:-6px;right:0;height:17px}
+.u_comment_box .u_comment_lst .u_comment_recomm a{display:inline-block;min-width:15px;height:24px;padding:0 7px 0 24px;border:1px solid #b6b6b6;background-position:-227px -28px;background-color:#fff;font-size:12px;color:#ed232b;font-weight:bold;line-height:23px;text-align:center;-webkit-bordr-radius:3px;border-radius:3px}
+.u_comment_box .u_comment_lst .u_comment_recomm a ~ a{margin-left:6px;background-position:-227px -59px;color:#3a5382}
+.u_comment_box .u_comment_lst .u_comment_reply{position:relative;margin:5px 15px 11px;font-size:12px;color:#000}
+.u_comment_box .u_comment_lst .u_comment_reply .u_comment_btns:after{display:block;clear:both;content:''}
+.u_comment_box .u_comment_lst .u_comment_reply .u_btn{display:inline-block;margin-right:7px;height:24px;padding:0 8px 0 9px;border-radius:3px;border:1px solid #b6b6b6;background:#fff;font-size:13px;line-height:24px}
+.u_comment_box .u_comment_lst .u_comment_reply .u_btn + a span{margin-right:3px}
+.u_comment_box .u_comment_lst .u_comment_reply .bt_arw{position:relative;padding:0 15px 0 9px}
+.u_comment_box .u_comment_lst .u_comment_reply .bt_arw:after{position:absolute;right:6px;top:50%;width:6px;height:3px;margin-top:-2px;content:''}
+.u_comment_box .u_comment_lst .u_comment_reply .bt_arw.open:after{background-position:-235px -18px}
+.u_comment_box .u_comment_lst .u_comment_reply .bt_arw.close:after{background-position:-243px -18px}
+.u_comment_box .u_comment_lst .u_comment_reply .u_comment_recomm{top:0;right:-1px;height:26px}
+.u_comment_box .u_comment_lst .u_comment_writebox{padding:13px 0 1px;margin:11px -15px -12px;border-top:1px solid #d3d3d4;background: #f0f0f4;}
+.u_comment_box .u_comment_depth2 .u_comment_writebox,.u_comment_box .u_comment_depth3 .u_comment_writebox{margin:10px -15px -12px -30px;padding:13px 0 1px;border-top:1px solid #c9c9c9;border-bottom:1px solid #b2b2b2}
+.u_comment_box .u_comment_depth2 .u_comment_info,.u_comment_box .u_comment_depth2 .u_comment_text,.u_comment_box .u_comment_depth2 .u_comment_reply,.u_comment_box .u_comment_depth3 .u_comment_info,.u_comment_box .u_comment_depth3 .u_comment_text,.u_comment_box .u_comment_depth3 .u_comment_reply,.u_comment_box .u_comment_depth2 .u_comment_del{margin-left:30px}
+.u_comment_box .u_comment_lst .u_comment_write{overflow:hidden;position:relative;padding-left:30px;margin-right:10px}
+.u_comment_box .u_comment_lst .u_comment_write:after{position:absolute;left:14px;top:2px;width:9px;height:9px;background-position:-69px 0;content:''}
+.u_comment_box .u_comment_lst li.best{border-top:1px solid #b2b2b2}
+.u_comment_box .u_comment_lst li.first{border-top:0}
+.u_comment_box .u_comment_lst .u_comment_reply_list{margin:11px -15px}
+.u_comment_box .u_comment_lst .u_comment_reply_list li{border-top:1px solid #e5e5e5}
+.u_comment_box .u_comment_lst .u_comment_reply_list li:first-child{border-top:1px solid #cfcfcf}
+
+.u_comment_box .u_comment_lst .u_depth{display:block;position:absolute;top:8px;left:14px;width:9px;height:9px;background-position:-69px 0;text-indent:-999em}
+.u_comment_box .u_comment_lst_count{position:relative;height:35px;border-top:1px solid #dbdbdb}
+.u_comment_box .u_comment_lst_count span{display:block;position:relative;margin-right:15px;padding-right:11px;text-align:right;line-height:35px}
+.u_comment_box .u_comment_lst_count span::after{display:block;position:absolute;top:13px;right:2px;width:5px;height:7px;background-position:-245px 1px;content:''}
+.u_comment_box .u_comment_lst_count span em{font-size:14px;font-weight:bold;color:#17c225}
+.u_comment_box .u_comment_none{padding:40px 0;border-top:1px solid #e5e5e5;text-align:center}
+.u_comment_box .u_comment_none p{font-size:12px;color:#848996;line-height:14px;text-align:center}
+.u_comment_box .u_comment_none a{margin:13px auto 0}
+
+/* color */
+.u_comment_box .c_bak{background-color:#fbfbfb}
+.u_comment_box .c_fnt,.u_comment_box .u_comment_lst .c_fnt{color:#525252}
+
+/* checkbox */
+.u_comment_box .u_socail_ch .chb:checked + .lbl_me2{background-position:-1px -87px;border:1px solid #401f91;background-color:#5932b3}
+.u_comment_box .u_socail_ch .chb:checked + .lbl_facebook{background-position:-45px -87px;border:1px solid #243863;background-color:#466199}
+.u_comment_box .u_socail_ch .chb:checked + .lbl_twitter{background-position:-88px -87px;border:1px solid #1c6da8;background-color:#3183be}
+.u_comment_box .u_socail_ch .chb:checked + .lbl_yozm{background-position:-132px -87px;border:1px solid #d3415d;background-color:#e96780}
+.u_comment_box .u_socail_ch .disabled + .lbl_me2,.u_comment_box .u_socail_ch .disabled:checked + .lbl_me2{background-position:-1px -26px;border:1px solid #b4b4b4;background-color:#fbfbfb}
+.u_comment_box .u_socail_ch .disabled + .lbl_facebook,.u_comment_box .u_socail_ch .disabled:checked + .lbl_facebook{background-position:-45px -26px;border:1px solid #b4b4b4;background-color:#fbfbfb}
+.u_comment_box .u_socail_ch .disabled + .lbl_twitter,.u_comment_box .u_socail_ch .disabled:checked + .lbl_twitter{background-position:-88px -26px;border:1px solid #b4b4b4;background-color:#fbfbfb}
+.u_comment_box .u_socail_ch .disabled + .lbl_yozm,.u_comment_box .u_socail_ch .disabled:checked + .lbl_yozm{background-position:-132px -26px;border:1px solid #b4b4b4;background-color:#fbfbfb}
+
+/* checkbox_black */
+.u_comment_box.c_black .u_socail_ch .chb:checked + .lbl_me2{border:1px solid #0b0c0f}
+.u_comment_box.c_black .u_socail_ch .chb:checked + .lbl_facebook{border:1px solid #0b0c0f}
+.u_comment_box.c_black .u_socail_ch .chb:checked + .lbl_twitter{border:1px solid #0b0c0f}
+.u_comment_box.c_black .u_socail_ch .chb:checked + .lbl_yozm{border:1px solid #0b0c0f}
+.u_comment_box.c_black .u_socail_ch .disabled + .lbl_me2,.u_comment_box.c_black .u_socail_ch .disabled:checked + .lbl_me2{border:1px solid #0b0c0f;background-color:#17191f}
+.u_comment_box.c_black .u_socail_ch .disabled + .lbl_facebook,.u_comment_box.c_black .u_socail_ch .disabled:checked + .lbl_facebook{border:1px solid #0b0c0f;background-color:#17191f}
+.u_comment_box.c_black .u_socail_ch .disabled + .lbl_twitter,.u_comment_box.c_black .u_socail_ch .disabled:checked + .lbl_twitter{border:1px solid #0b0c0f;background-color:#17191f}
+.u_comment_box.c_black .u_socail_ch .disabled + .lbl_yozm,.u_comment_box.c_black .u_socail_ch .disabled:checked + .lbl_yozm{border:1px solid #0b0c0f;background-color:#17191f}
+
+/* 리스트 2형 */
+.u_comment_box.u_comment_v2 .u_section .u_btn_write,
+.u_comment_box.u_comment_v2 .u_comment_lst_count{display:none !important}
+.u_comment_box.u_comment_v2 .u_section{border-bottom:none}
+
+.u_comment_box .u_comment_writebox .u_write_text{height:55px}

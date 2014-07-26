@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controller/lt.controller.Opaciter.js</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Source: controller/lt.controller.Opaciter.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/**
+ * @param {HTMLElement} wrapper
+ * @param {lt.model.Images} model
+ * @constructor
+ */
+lt.controller.Opaciter = function(wrapper, model){
+    this.opacityWrapper = wrapper;
+    this.opacityArea = null;
+    this.opacityButton = null;
+    this._opacityAreaHeight = 0;
+    this._touchstartY = 0;
+    this._elementY = 0;
+    this._model = model;
+
+    this._assignElements();
+    this._bindEvents();
+    this._computeOpacityAreaHeight();
+    this._move(this._model.opacity() * 100);
+};
+
+lt.controller.Opaciter.prototype = {
+
+    /**
+     * 투명도 최소 값
+     * @type {number}
+     * @readonly
+     */
+    _OPACITY_MIN : 0,
+
+    /**
+     * 투명도 최대 값
+     * @type {number}
+     * @readonly
+     */
+    _OPACITY_MAX : 100,
+
+    /**
+     * 엘리먼트를 저장한다.
+     * @private
+     */
+    _assignElements : function(){
+        this.opacityButton = this.opacityWrapper.querySelector('button');
+        this.opacityArea = this.opacityWrapper.querySelector('.lt-opacity-area');
+    },
+
+    /**
+     * 이벤트를 바인딩한다.
+     * @private
+     */
+    _bindEvents : function(){
+        this.opacityButton.addEventListener('touchstart', this._onTouchstartButton.bind(this));
+        this.opacityButton.addEventListener('touchmove', this._onTouchmoveButton.bind(this));
+        this.opacityButton.addEventListener('touchend', this._onTouchendButton.bind(this));
+    },
+
+    /**
+     * 투명도 조절 버튼의 터치스타트 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchstartButton : function(event){
+        event.stopPropagation();
+        event.preventDefault();
+
+        var touch = event.touches[0];
+
+        this._touchstartY = touch.clientY;
+        this._elementY = parseInt(this.opacityButton.style.top, 10);
+        this._model.opacityToPercent(this._elementY);
+    },
+
+    /**
+     * 투명도 조절 버튼의 터치무브 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchmoveButton : function(event){
+        event.stopPropagation();
+        event.preventDefault();
+
+        var touch = event.touches[0],
+            touchmoveY = touch.clientY,
+            gap = (this._touchstartY - touchmoveY) * -1,
+            percent = (gap / this._opacityAreaHeight * 100) + this._elementY;
+
+        if(percent &lt; this._OPACITY_MIN){
+            percent = this._OPACITY_MIN;
+        }
+
+        if(percent > this._OPACITY_MAX){
+            percent = this._OPACITY_MAX;
+        }
+
+        this._move(percent);
+        this._model.opacityToPercent(percent);
+    },
+
+    /**
+     * 투명도 조절 버튼의 터치엔드 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchendButton : function(event){
+        event.stopPropagation();
+        event.preventDefault();
+
+        var percent = parseInt(this.opacityButton.style.top, 10);
+        this._model.opacityToPercent(percent);
+    },
+
+    /**
+     * 투명도 구역의 높이 값을 계산하여 저장한다.
+     * @private
+     */
+    _computeOpacityAreaHeight: function(){
+        this._opacityAreaHeight = parseInt(window.getComputedStyle(this.opacityArea).height, 10);
+    },
+
+    /**
+     * 투명도 조절 버튼을 지정한 높이로 이동시킨다.
+     * @param {number} percent
+     * @private
+     */
+    _move : function(percent){
+        this.opacityButton.style.top = percent + '%';
+    }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="lt.controller.Dragger.html">Dragger</a></li><li><a href="lt.controller.Guide.html">Guide</a></li><li><a href="lt.controller.Images.html">Images</a></li><li><a href="lt.controller.Mover.html">Mover</a></li><li><a href="lt.controller.Opaciter.html">Opaciter</a></li><li><a href="lt.helper.Observer.html">Observer</a></li><li><a href="lt.model.Images.html">Images</a></li><li><a href="lt.model.Opacity.html">Opacity</a></li><li><a href="lt.model.Path.html">Path</a></li><li><a href="lt.model.Position.html">Position</a></li></ul><h3>Namespaces</h3><ul><li><a href="lt.controller.html">controller</a></li><li><a href="lt.helper.html">helper</a></li><li><a href="lt.model.html">model</a></li><li><a href="window.lt.html">lt</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LightTable">LightTable</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sat Jul 26 2014 15:04:55 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

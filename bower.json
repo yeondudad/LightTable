@@ -1,0 +1,16 @@
+{
+  "name": "LightTable",
+  "version": "0.0.2",
+  "homepage": "https://github.com/UYEONG/LightTable",
+  "authors": [
+    "ju.uyeong <ju.uyeong@nhn.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
