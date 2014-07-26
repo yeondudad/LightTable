@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Index</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Index</h1>
+    
+    
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><p><img src="https://raw.githubusercontent.com/UYEONG/LightTable/0.0.2/light_table_main.png" alt="LightTable 0.0.1. 1PX의 책임, 마크업 개발자를 위한 디자인 가이드라인 컨트롤러. 편하게, 빠르게, 정확하게 LightTable이 도와드립니다."></p>
+<h1>LightTable</h1>
+<h2>Help</h2>
+<ul>
+<li><a href="http://uyeong.github.io/LightTable/demo">demo(mobile)</a></li>
+<li><a href="http://uyeong.github.io/LightTable/docs">documentation</a></li>
+</ul>
+<h2>Test</h2>
+<ul>
+<li>ios4(safari6), ios5(safari7)</li>
+</ul>
+<h2>Downloads</h2>
+<ul>
+<li><a href="https://github.com/UYEONG/LightTable/blob/0.0.2/build/LightTable-0.0.2.html">lightTable-0.0.2.html</a></li>
+<li><a href="https://github.com/UYEONG/LightTable/blob/0.0.2/build/LightTable-0.0.2.min.css">lightTable-0.0.2.min.css</a></li>
+<li><a href="https://github.com/UYEONG/LightTable/blob/0.0.2/build/LightTable-0.0.2.min.js">lightTable-0.0.2.min.js</a></li>
+</ul>
+<h2>How to use</h2>
+<pre><code>bower install lighttable</code></pre>
+<h2>Examples</h2>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./bower_components/build/LightTable-0.0.2.min.css&quot;/&gt;
+
+&lt;!-- /////////////////////////////////////// --&gt;
+&lt;!-- /////// LightTable HTML - START /////// --&gt;
+&lt;!-- /////////////////////////////////////// --&gt;
+&lt;div id=&quot;light-table&quot;&gt;
+    &lt;div class=&quot;lt-navigation&quot;&gt;
+        &lt;div class=&quot;lt-search&quot;&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;image-search&quot;&gt;&lt;span&gt;검색&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;lt-opacity&quot;&gt;
+            &lt;div class=&quot;lt-opacity-bar&quot;&gt;
+                &lt;div class=&quot;lt-opacity-area&quot;&gt;
+                    &lt;button type=&quot;button&quot; data-role=&quot;image-opacity&quot;&gt;&lt;span&gt;투명도 조정&lt;/span&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;lt-dragger&quot;&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;navigation-mover&quot;&gt;&lt;span&gt;이동&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;lt-mover&quot;&gt;
+        &lt;div class=&quot;lt-mover-buttons&quot;&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;image-pos-up&quot;&gt;&lt;span&gt;&amp;#8593;&lt;/span&gt;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;image-pos-right&quot;&gt;&lt;span&gt;&amp;#8594;&lt;/span&gt;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;image-pos-down&quot;&gt;&lt;span&gt;&amp;#8595;&lt;/span&gt;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;image-pos-left&quot;&gt;&lt;span&gt;&amp;#8592;&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;lt-dragger&quot;&gt;
+            &lt;button type=&quot;button&quot; data-role=&quot;navigation-mover&quot;&gt;&lt;span&gt;이동&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;lt-images&quot;&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div class=&quot;lt-guide&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /////////////////////////////////////// --&gt;
+&lt;!-- //////// LightTable HTML - END //////// --&gt;
+&lt;!-- /////////////////////////////////////// --&gt;
+
+&lt;script src=&quot;./bower_components/build/LightTable-0.0.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    /**
+     * @type {LightTableComponents}
+     */
+    var lightTable = LightTable([
+        './img/demo-0.png',
+        './img/demo-1.png',
+        './img/demo-2.png',
+        './img/demo-3.png',
+    ]);
+&lt;/script&gt;</code></pre>
+<h2>Release History</h2>
+<h4>2014.07.26 - LightTable-0.0.2.js</h4>
+<ul>
+<li>디자인 변경</li>
+<li>설계 변경 및 재구현</li>
+<li>라이브러리 의존성 제거</li>
+</ul>
+<h4>2014.05.08 - LightTable-0.0.1.js</h4>
+<ul>
+<li>이미지 선택 기능</li>
+<li>이미지 투명도 조절 기능</li>
+<li>이미지 위치 조정 기능</li>
+<li>투명도 컨트롤 드래그 기능</li>
+<li>위치 조정 컨트롤 드래그 기능</li>
+<li>컴포넌트 뷰 상태 기억 기능</li>
+<li>데이터 초기화 및 뷰 초기화 기능</li>
+</ul>
+<h2>License</h2>
+<p>Copyright (c) 2014 ju.uyeong
+Licensed under the MIT license.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="lt.controller.Dragger.html">Dragger</a></li><li><a href="lt.controller.Guide.html">Guide</a></li><li><a href="lt.controller.Images.html">Images</a></li><li><a href="lt.controller.Mover.html">Mover</a></li><li><a href="lt.controller.Opaciter.html">Opaciter</a></li><li><a href="lt.helper.Observer.html">Observer</a></li><li><a href="lt.model.Images.html">Images</a></li><li><a href="lt.model.Opacity.html">Opacity</a></li><li><a href="lt.model.Path.html">Path</a></li><li><a href="lt.model.Position.html">Position</a></li></ul><h3>Namespaces</h3><ul><li><a href="lt.controller.html">controller</a></li><li><a href="lt.helper.html">helper</a></li><li><a href="lt.model.html">model</a></li><li><a href="window.lt.html">lt</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LightTable">LightTable</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sat Jul 26 2014 15:04:55 GMT+0900 (KST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
