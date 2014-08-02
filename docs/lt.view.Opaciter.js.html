@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: view/lt.view.Opaciter.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,53 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: view/lt.view.Opaciter.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
+			class="sunlight-highlight-javascript linenums">/**
+ * Opaciter 뷰
+ * @constructor
+ */
+lt.view.Opaciter = function(){
+    this.opacityButton = null;
+    this.opacityArea = null;
+    this.opacityAreaHeight = 0;
+
+    this._assignElements();
+    this._setComputeOpacityAreaHeight();
+};
+
+lt.view.Opaciter.prototype = {
+
     /**
-     * @global
+     * 뷰를 렌더링 한다.
+     * @param percent
      */
-    window.lt = {};
-}
+    render : function(percent){
+        this.opacityButton.style.top = percent + '%';
+    },
 
-/**
- * @namespace
- */
-lt.model = lt.model || {};
+    /**
+     * 엘리먼트를 캐쉬한다.
+     * @private
+     */
+    _assignElements : function(){
+        this.opacityWrapper = document.querySelector('#light-table .lt-navigation');
+        this.opacityArea = this.opacityWrapper.querySelector('.lt-opacity-area');
+        this.opacityButton = this.opacityWrapper.querySelector('.lt-opacity-area button');
+        this.draggerButton = this.opacityWrapper.querySelector('.lt-dragger button');
+    },
 
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
-
-/**
- * @namespace
- */
-lt.view = lt.view || {};
-
-/**
- * @namespace
- */
-lt.template = lt.template || {};
-
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
-
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+    /**
+     * 투명도 구역의 높이 값을 계산하여 저장한다.
+     * @private
+     */
+    _setComputeOpacityAreaHeight: function(){
+        this.opacityAreaHeight = parseInt(window.getComputedStyle(this.opacityArea).height, 10);
+    }
+};</pre>
 	</article>
 </section>
 

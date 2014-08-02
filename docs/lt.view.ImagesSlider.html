@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Class: Opaciter</title>
+	<title>Documentation Class: ImagesSlider</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,14 +144,14 @@
 					
 
 
-	<h1 class="page-title">Class: Opaciter</h1>
+	<h1 class="page-title">Class: ImagesSlider</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.controller.html">.controller</a>.</span>
+        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.view.html">.view</a>.</span>
     
-    Opaciter
+    ImagesSlider
     </h2>
     
 </header>
@@ -163,7 +163,7 @@
     
         
 <dt>
-    <h4 class="name" id="Opaciter"><span class="type-signature"></span>new Opaciter<span class="signature">(view, guide)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ImagesSlider"><span class="type-signature"></span>new ImagesSlider<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -171,7 +171,7 @@
     
     
     <div class="description">
-        Opaciter 컨트롤러
+        ImagesSlider 뷰
     </div>
     
 
@@ -179,78 +179,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>view</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="lt.view.Opaciter.html">lt.view.Opaciter</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>guide</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="lt.model.Guide.html">lt.model.Guide</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -280,8 +208,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-7">line 7</a>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-5">line 5</a>
 			</li>
 		</ul>
 	</dd>
@@ -329,7 +257,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="_bindUIActions"><span class="type-signature">&lt;private> </span>_bindUIActions<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_assignElements"><span class="type-signature">&lt;private> </span>_assignElements<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -337,7 +265,7 @@
     
     
     <div class="description">
-        이벤트를 바인딩한다.
+        엘리먼트를 캐쉬한다.
     </div>
     
 
@@ -374,8 +302,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-41">line 41</a>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-78">line 78</a>
 			</li>
 		</ul>
 	</dd>
@@ -405,7 +333,7 @@
         
             
 <dt>
-    <h4 class="name" id="_initDragger"><span class="type-signature">&lt;private> </span>_initDragger<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="hide"><span class="type-signature"></span>hide<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -413,7 +341,7 @@
     
     
     <div class="description">
-        드래그 가능 하도록 Dragger 헬퍼 모듈을 init 한다.
+        이미지 슬라이더를 감춘다.
     </div>
     
 
@@ -450,8 +378,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-29">line 29</a>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-42">line 42</a>
 			</li>
 		</ul>
 	</dd>
@@ -481,7 +409,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchmoveOpacityButton"><span class="type-signature">&lt;private> </span>_onTouchmoveOpacityButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">(paths)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -489,7 +417,7 @@
     
     
     <div class="description">
-        투명도 조절 버튼의 터치무브 이벤트 리스너
+        이미지 리스트를 랜더링한다.
     </div>
     
 
@@ -523,13 +451,13 @@
 
         <tr>
             
-                <td class="name"><code>event</code></td>
+                <td class="name"><code>paths</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Event</span>
+<span class="param-type">Array.&lt;string></span>
 
 
             
@@ -575,8 +503,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-71">line 71</a>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-19">line 19</a>
 			</li>
 		</ul>
 	</dd>
@@ -606,7 +534,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchmoveOpacityWrapper"><span class="type-signature">&lt;private> </span>_onTouchmoveOpacityWrapper<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="show"><span class="type-signature"></span>show<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -614,7 +542,83 @@
     
     
     <div class="description">
-        투명도 조절 바의 touchmove 이벤트 리스너
+        이미지 슬라이더를 보인다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-35">line 35</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="swipe"><span class="type-signature"></span>swipe<span class="signature">(dist, speed)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        지정한 좌표 만큼 스와이프한다.
     </div>
     
 
@@ -636,6 +640,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -648,18 +654,61 @@
 
         <tr>
             
-                <td class="name"><code>event</code></td>
+                <td class="name"><code>dist</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Event</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>speed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
             
 
             
@@ -700,133 +749,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-52">line 52</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_onTouchstartOpacityButton"><span class="type-signature">&lt;private> </span>_onTouchstartOpacityButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        투명도 조절 버튼의 터치스타트 이벤트 리스너
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Opaciter.js.html">controller/lt.controller.Opaciter.js</a>,
-				 <a href="lt.controller.Opaciter.js.html#sunlight-1-line-61">line 61</a>
+				<a href="lt.view.ImagesSlider.js.html">view/lt.view.ImagesSlider.js</a>,
+				 <a href="lt.view.ImagesSlider.js.html#sunlight-1-line-51">line 51</a>
 			</li>
 		</ul>
 	</dd>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: view/lt.view.ImagesSlider.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,94 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: view/lt.view.ImagesSlider.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
+			class="sunlight-highlight-javascript linenums">/**
+ * ImagesSlider 뷰
+ * @constructor
+ */
+lt.view.ImagesSlider = function(){
+    this.selectButton = null;
+    this.imagesWrapper = null;
+    this.imagesList = null;
+
+    this._assignElements();
+};
+
+lt.view.ImagesSlider.prototype = {
+
     /**
-     * @global
+     * 이미지 리스트를 랜더링한다.
+     * @param {Array.&lt;string>} paths
      */
-    window.lt = {};
-}
+    render : function(paths){
+        var screenWidth = lt.util.screenWidth(),
+            imageWidth = screenWidth - 40,
+            html = '';
 
-/**
- * @namespace
- */
-lt.model = lt.model || {};
+        paths.forEach(function(image){
+            html = html + '&lt;li class="lst-img" style="margin:0 0 0 0px;width:' + imageWidth + 'px">' +
+                '&lt;button>선택&lt;/button>&lt;img src="' + image + '"/>&lt;/li>';
+        });
 
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
+        this.imagesList.innerHTML = html;
+    },
 
-/**
- * @namespace
- */
-lt.view = lt.view || {};
+    /**
+     * 이미지 슬라이더를 보인다.
+     */
+    show : function(){
+        this.imagesWrapper.style.display = 'block';
+    },
 
-/**
- * @namespace
- */
-lt.template = lt.template || {};
+    /**
+     * 이미지 슬라이더를 감춘다.
+     */
+    hide : function(){
+        this.imagesWrapper.style.display = 'none';
+    },
 
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
+    /**
+     * 지정한 좌표 만큼 스와이프한다.
+     * @param {number?} dist
+     * @param {number?} speed
+     */
+    swipe : function(dist, speed){
+        var transition = '',
+            style = this.imagesList.style;
 
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+        speed = speed || 0;
+
+        if(speed > 500){
+            speed = 500;
+        }
+
+        transition = 'all '+ speed +'ms';
+
+        ['webkit', 'moz', 'ms', 'o'].forEach(function(vendor){
+            style[vendor + 'Transition'] = transition;
+        });
+
+        // transform을 사용하면 ios4 에서 점멸되는
+        // 버그가 있어 margin 값으로 조절.
+        // 버그 원인을 파악하면 transform 사용하는 코드로 대체 예정
+        style.margin = '0 0 0 ' + dist +'px';
+        style.transition = transition;
+    },
+
+    /**
+     * 엘리먼트를 캐쉬한다.
+     * @private
+     */
+    _assignElements : function(){
+        this.selectButton = document.querySelector('#light-table .lt-search button');
+        this.imagesWrapper = document.querySelector('#light-table .lt-images');
+        this.imagesList = this.imagesWrapper.querySelector('ul');
+    }
+};</pre>
 	</article>
 </section>
 

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Class: Mover</title>
+	<title>Documentation Class: Paths</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,14 +144,14 @@
 					
 
 
-	<h1 class="page-title">Class: Mover</h1>
+	<h1 class="page-title">Class: Paths</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.controller.html">.controller</a>.</span>
+        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.model.html">.model</a>.</span>
     
-    Mover
+    Paths
     </h2>
     
 </header>
@@ -163,7 +163,7 @@
     
         
 <dt>
-    <h4 class="name" id="Mover"><span class="type-signature"></span>new Mover<span class="signature">(view, guide)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Paths"><span class="type-signature"></span>new Paths<span class="signature">(paths)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -171,7 +171,7 @@
     
     
     <div class="description">
-        Mover 컨트롤러
+        경로 모델 객체(이터레이터)
     </div>
     
 
@@ -193,6 +193,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -205,41 +207,28 @@
 
         <tr>
             
-                <td class="name"><code>view</code></td>
+                <td class="name"><code>paths</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="lt.view.Mover.html">lt.view.Mover</a></span>
+<span class="param-type">?Array.&lt;string></span>
 
 
             
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>guide</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type"><a href="lt.model.Guide.html">lt.model.Guide</a></span>
 
+                
+                    &lt;nullable><br>
+                
 
-            
-            </td>
-
+                
+                </td>
             
 
             
@@ -280,8 +269,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-7">line 7</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-6">line 6</a>
 			</li>
 		</ul>
 	</dd>
@@ -329,7 +318,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="_bindUIActions"><span class="type-signature">&lt;private> </span>_bindUIActions<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addUpdateListener"><span class="type-signature"></span>addUpdateListener<span class="signature">(callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -337,159 +326,7 @@
     
     
     <div class="description">
-        이벤트를 바인딩한다.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-39">line 39</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_initDragger"><span class="type-signature">&lt;private> </span>_initDragger<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        드래그 가능 하도록 Dragger 헬퍼 모듈을 init 한다.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-27">line 27</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_intervalReposition"><span class="type-signature">&lt;private> </span>_intervalReposition<span class="signature">(callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        반복적으로 _reposition 메서드를 호출한다.
+        상태 변경에 대한 리스너를 등록한다.
     </div>
     
 
@@ -575,8 +412,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-123">line 123</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-87">line 87</a>
 			</li>
 		</ul>
 	</dd>
@@ -606,7 +443,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchendMoverWrapper"><span class="type-signature">&lt;private> </span>_onTouchendMoverWrapper<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="clear"><span class="type-signature"></span>clear<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -614,7 +451,7 @@
     
     
     <div class="description">
-        무버 랩퍼의 터치엔드 이벤트 리스너
+        값을 제거한다.
     </div>
     
 
@@ -622,55 +459,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -700,8 +488,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-108">line 108</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-94">line 94</a>
 			</li>
 		</ul>
 	</dd>
@@ -731,7 +519,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchstartDownButton"><span class="type-signature">&lt;private> </span>_onTouchstartDownButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="currentKey"><span class="type-signature"></span>currentKey<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
     
     
 </dt>
@@ -739,7 +527,7 @@
     
     
     <div class="description">
-        아래 버튼의 터치스타트 이벤트 리스너
+        현재 키 값을 반환한다.
     </div>
     
 
@@ -747,55 +535,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -825,8 +564,483 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-80">line 80</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-27">line 27</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="currentPath"><span class="type-signature"></span>currentPath<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        현재 키에 해당하는 경로를 반환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-35">line 35</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isFirst"><span class="type-signature"></span>isFirst<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        현재 키가 맨 앞을 가리키는지 파악한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-61">line 61</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isLast"><span class="type-signature"></span>isLast<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        현재 키가 마지막을 가리키는지 파악한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-69">line 69</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="list"><span class="type-signature"></span>list<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        현재 저장된 경로 목록을 반환한다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-19">line 19</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Array.&lt;string></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="next"><span class="type-signature"></span>next<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        키를 다음으로 이동시킨다.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-42">line 42</a>
 			</li>
 		</ul>
 	</dd>
@@ -856,7 +1070,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchstartLeftButton"><span class="type-signature">&lt;private> </span>_onTouchstartLeftButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="prev"><span class="type-signature"></span>prev<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -864,7 +1078,7 @@
     
     
     <div class="description">
-        왼쪽 버튼의 터치스타트 이벤트 리스너
+        키를 이전으로 이동시킨다.
     </div>
     
 
@@ -872,55 +1086,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -950,8 +1115,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-94">line 94</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-51">line 51</a>
 			</li>
 		</ul>
 	</dd>
@@ -981,7 +1146,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchstartRightButton"><span class="type-signature">&lt;private> </span>_onTouchstartRightButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="save"><span class="type-signature"></span>save<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -989,7 +1154,8 @@
     
     
     <div class="description">
-        오른쪽 버튼의 터치스타트 이벤트 리스너
+        현재 키에 해당하는 경로를
+로컬 스토리지에 저장한다.
     </div>
     
 
@@ -997,55 +1163,6 @@
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -1075,259 +1192,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-66">line 66</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_onTouchstartUpButton"><span class="type-signature">&lt;private> </span>_onTouchstartUpButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        위 버튼의 터치스타트 이벤트 리스너
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-52">line 52</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_reposition"><span class="type-signature">&lt;private> </span>_reposition<span class="signature">(callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        모델의 포지션 값을 가져와 콜백에 넘겨주고
-콜백에서 반환하는 값을 모델에 저장한다.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-141">line 141</a>
+				<a href="lt.model.Paths.js.html">model/lt.model.Paths.js</a>,
+				 <a href="lt.model.Paths.js.html#sunlight-1-line-77">line 77</a>
 			</li>
 		</ul>
 	</dd>

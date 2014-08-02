@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: helper/lt.helper.Dragger.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,109 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: helper/lt.helper.Dragger.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
+			class="sunlight-highlight-javascript linenums">/**
+ * 드래거 헬퍼
+ * @param {string|number} identifier
+ * @param {HTMLElement} dragTarget
+ * @param {HTMLElement} dragButton
+ * @constructor
+ */
+lt.helper.Dragger = function(identifier, dragTarget, dragButton){
+    if(!(this instanceof lt.helper.Dragger)){
+        return new lt.helper.Dragger(identifier, dragTarget, dragButton);
+    }
+
+    this._identifier = identifier;
+    this.dragTarget = dragTarget;
+    this.dragButton = dragButton;
+    this._touchPosition = {};
+    this._elementPosition = {};
+
+    var x = localStorage.getItem(this._identifier + '::x') || 0,
+        y = localStorage.getItem(this._identifier + '::y') || 0;
+
+    this._bindEvents();
+    this._dragging(x, y);
+};
+
+lt.helper.Dragger.prototype = {
+
     /**
-     * @global
+     * 이벤트를 바인딩 한다.
+     * @private
      */
-    window.lt = {};
-}
+    _bindEvents : function(){
+        this.dragButton.addEventListener('touchstart', this._onTouchstartDragButton.bind(this));
+        this.dragButton.addEventListener('touchmove', this._onTouchmoveDragButton.bind(this));
+        this.dragButton.addEventListener('touchend', this._onTouchendDragButton.bind(this));
+    },
 
-/**
- * @namespace
- */
-lt.model = lt.model || {};
+    /**
+     * 드래그 버튼의 터치스타트 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchstartDragButton : function(event){
+        event.preventDefault();
+        event.stopPropagation();
 
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
+        this._touchPosition.x = event.touches[0].clientX;
+        this._touchPosition.y = event.touches[0].clientY;
 
-/**
- * @namespace
- */
-lt.view = lt.view || {};
+        this._elementPosition.x = parseInt(this.dragTarget.style.left, 10);
+        this._elementPosition.y = parseInt(this.dragTarget.style.top, 10);
+    },
 
-/**
- * @namespace
- */
-lt.template = lt.template || {};
+    /**
+     * 드래그 버튼의 터치무브 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchmoveDragButton : function(event){
+        event.preventDefault();
+        event.stopPropagation();
 
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
+        var gapX = event.touches[0].clientX - this._touchPosition.x,
+            gapY = event.touches[0].clientY - this._touchPosition.y,
+            x = gapX + this._elementPosition.x,
+            y = gapY + this._elementPosition.y;
 
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+        this._dragging(x, y);
+    },
+
+    /**
+     * 드래그 버튼의 터치엔드 이벤트 리스너
+     * @param {Event} event
+     * @private
+     */
+    _onTouchendDragButton : function(event){
+        event.preventDefault();
+        event.stopPropagation();
+
+        var gapX = event.changedTouches[0].clientX - this._touchPosition.x,
+            gapY = event.changedTouches[0].clientY - this._touchPosition.y,
+            x = gapX + this._elementPosition.x,
+            y = gapY + this._elementPosition.y;
+
+        localStorage.setItem(this._identifier + '::x', x);
+        localStorage.setItem(this._identifier + '::y', y);
+    },
+
+    /**
+     * 드래그 타겟을 드래깅 한다.
+     * @private
+     */
+    _dragging : function(x, y){
+        this.dragTarget.style.left = x + 'px';
+        this.dragTarget.style.top = y + 'px';
+    }
+};
+</pre>
 	</article>
 </section>
 

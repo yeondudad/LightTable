@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Class: Mover</title>
+	<title>Documentation Class: Dragger</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,14 +144,14 @@
 					
 
 
-	<h1 class="page-title">Class: Mover</h1>
+	<h1 class="page-title">Class: Dragger</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.controller.html">.controller</a>.</span>
+        <span class="ancestors"><a href="global.html#lt">lt</a><a href="lt.helper.html">.helper</a>.</span>
     
-    Mover
+    Dragger
     </h2>
     
 </header>
@@ -163,7 +163,7 @@
     
         
 <dt>
-    <h4 class="name" id="Mover"><span class="type-signature"></span>new Mover<span class="signature">(view, guide)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Dragger"><span class="type-signature"></span>new Dragger<span class="signature">(identifier, dragTarget, dragButton)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -171,7 +171,7 @@
     
     
     <div class="description">
-        Mover 컨트롤러
+        드래거 헬퍼
     </div>
     
 
@@ -205,13 +205,16 @@
 
         <tr>
             
-                <td class="name"><code>view</code></td>
+                <td class="name"><code>identifier</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="lt.view.Mover.html">lt.view.Mover</a></span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
 
 
             
@@ -228,13 +231,36 @@
 
         <tr>
             
-                <td class="name"><code>guide</code></td>
+                <td class="name"><code>dragTarget</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="lt.model.Guide.html">lt.model.Guide</a></span>
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dragButton</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
 
 
             
@@ -280,8 +306,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-7">line 7</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-8">line 8</a>
 			</li>
 		</ul>
 	</dd>
@@ -329,7 +355,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="_bindUIActions"><span class="type-signature">&lt;private> </span>_bindUIActions<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_bindEvents"><span class="type-signature">&lt;private> </span>_bindEvents<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -337,7 +363,7 @@
     
     
     <div class="description">
-        이벤트를 바인딩한다.
+        이벤트를 바인딩 한다.
     </div>
     
 
@@ -374,8 +400,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-39">line 39</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-32">line 32</a>
 			</li>
 		</ul>
 	</dd>
@@ -405,7 +431,7 @@
         
             
 <dt>
-    <h4 class="name" id="_initDragger"><span class="type-signature">&lt;private> </span>_initDragger<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_dragging"><span class="type-signature">&lt;private> </span>_dragging<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -413,7 +439,7 @@
     
     
     <div class="description">
-        드래그 가능 하도록 Dragger 헬퍼 모듈을 init 한다.
+        드래그 타겟을 드래깅 한다.
     </div>
     
 
@@ -450,8 +476,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-27">line 27</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-93">line 93</a>
 			</li>
 		</ul>
 	</dd>
@@ -481,7 +507,7 @@
         
             
 <dt>
-    <h4 class="name" id="_intervalReposition"><span class="type-signature">&lt;private> </span>_intervalReposition<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_onTouchendDragButton"><span class="type-signature">&lt;private> </span>_onTouchendDragButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -489,132 +515,7 @@
     
     
     <div class="description">
-        반복적으로 _reposition 메서드를 호출한다.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-123">line 123</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_onTouchendMoverWrapper"><span class="type-signature">&lt;private> </span>_onTouchendMoverWrapper<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        무버 랩퍼의 터치엔드 이벤트 리스너
+        드래그 버튼의 터치엔드 이벤트 리스너
     </div>
     
 
@@ -700,8 +601,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-108">line 108</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-76">line 76</a>
 			</li>
 		</ul>
 	</dd>
@@ -731,7 +632,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchstartDownButton"><span class="type-signature">&lt;private> </span>_onTouchstartDownButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_onTouchmoveDragButton"><span class="type-signature">&lt;private> </span>_onTouchmoveDragButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -739,7 +640,7 @@
     
     
     <div class="description">
-        아래 버튼의 터치스타트 이벤트 리스너
+        드래그 버튼의 터치무브 이벤트 리스너
     </div>
     
 
@@ -825,8 +726,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-80">line 80</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-59">line 59</a>
 			</li>
 		</ul>
 	</dd>
@@ -856,7 +757,7 @@
         
             
 <dt>
-    <h4 class="name" id="_onTouchstartLeftButton"><span class="type-signature">&lt;private> </span>_onTouchstartLeftButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_onTouchstartDragButton"><span class="type-signature">&lt;private> </span>_onTouchstartDragButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -864,7 +765,7 @@
     
     
     <div class="description">
-        왼쪽 버튼의 터치스타트 이벤트 리스너
+        드래그 버튼의 터치스타트 이벤트 리스너
     </div>
     
 
@@ -950,384 +851,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-94">line 94</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_onTouchstartRightButton"><span class="type-signature">&lt;private> </span>_onTouchstartRightButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        오른쪽 버튼의 터치스타트 이벤트 리스너
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-66">line 66</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_onTouchstartUpButton"><span class="type-signature">&lt;private> </span>_onTouchstartUpButton<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        위 버튼의 터치스타트 이벤트 리스너
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-52">line 52</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="_reposition"><span class="type-signature">&lt;private> </span>_reposition<span class="signature">(callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        모델의 포지션 값을 가져와 콜백에 넘겨주고
-콜백에서 반환하는 값을 모델에 저장한다.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="lt.controller.Mover.js.html">controller/lt.controller.Mover.js</a>,
-				 <a href="lt.controller.Mover.js.html#sunlight-1-line-141">line 141</a>
+				<a href="lt.helper.Dragger.js.html">helper/lt.helper.Dragger.js</a>,
+				 <a href="lt.helper.Dragger.js.html#sunlight-1-line-43">line 43</a>
 			</li>
 		</ul>
 	</dd>

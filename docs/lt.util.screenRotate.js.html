@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: util/lt.util.screenRotate.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,40 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: util/lt.util.screenRotate.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
+			class="sunlight-highlight-javascript linenums">lt.util.screenRotate = (function(){
+    var resizeTimer = 0,
+        screenRotate = null,
+        observer = new lt.helper.Observer();
+
+    window.addEventListener("resize", function(){
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function(){
+            observer.publish('rotate', [lt.util.isLandscape()]);
+        }, 500);
+    }, false);
+
     /**
-     * @global
+     * 디바이스를 로테이트 한 시점에 알고 싶다면
+     * 함수를 전달하여 콜백으로 등록한다.
+     * @memberOf lt.util
+     * @type {function}
+     * @param {function?} callback
+     * @returns {boolean}
      */
-    window.lt = {};
-}
+    screenRotate = function(callback){
+        if(callback !== undefined){
+            observer.subscribe('rotate', callback);
+        }
+    };
 
-/**
- * @namespace
- */
-lt.model = lt.model || {};
-
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
-
-/**
- * @namespace
- */
-lt.view = lt.view || {};
-
-/**
- * @namespace
- */
-lt.template = lt.template || {};
-
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
-
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+    return screenRotate;
+}());</pre>
 	</article>
 </section>
 

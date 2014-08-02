@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: util/lt.util.screenWidth.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,20 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: util/lt.util.screenWidth.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
-    /**
-     * @global
-     */
-    window.lt = {};
-}
-
-/**
- * @namespace
+			class="sunlight-highlight-javascript linenums">/**
+ * 랜드스케이프를 확인하여 스크린의 가로 사이즈를 반환한다.
+ * @memberOf lt.util
+ * @type {function}
+ * @returns {number}
  */
-lt.model = lt.model || {};
-
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
-
-/**
- * @namespace
- */
-lt.view = lt.view || {};
-
-/**
- * @namespace
- */
-lt.template = lt.template || {};
-
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
-
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+lt.util.screenWidth = function(){
+    return lt.util.isLandscape()? screen.height : screen.width;
+};</pre>
 	</article>
 </section>
 

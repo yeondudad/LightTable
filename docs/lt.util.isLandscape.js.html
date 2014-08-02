@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Documentation Source: namespace.js</title>
+	<title>Documentation Source: util/lt.util.isLandscape.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -144,47 +144,20 @@
 					
 
 
-		<h1 class="page-title">Source: namespace.js</h1>
+		<h1 class="page-title">Source: util/lt.util.isLandscape.js</h1>
     
 <section>
 	<article>
 		<pre
-			class="sunlight-highlight-javascript linenums">if(!window.lt){
-    /**
-     * @global
-     */
-    window.lt = {};
-}
-
-/**
- * @namespace
+			class="sunlight-highlight-javascript linenums">/**
+ * 랜드스케이프 상태인지 확인한다.
+ * @memberOf lt.util
+ * @type {function}
+ * @returns {boolean}
  */
-lt.model = lt.model || {};
-
-/**
- * @namespace
- */
-lt.controller = lt.controller || {};
-
-/**
- * @namespace
- */
-lt.view = lt.view || {};
-
-/**
- * @namespace
- */
-lt.template = lt.template || {};
-
-/**
- * @namespace
- */
-lt.helper = lt.helper || {};
-
-/**
- * @namespace
- */
-lt.util = lt.util || {};</pre>
+lt.util.isLandscape = function(){
+    return window.innerHeight &lt; window.innerWidth;
+};</pre>
 	</article>
 </section>
 
