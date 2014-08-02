@@ -14,19 +14,17 @@ module.exports = function(grunt) {
                 }
             }
         },
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js'
-            }
-        },
+
         jsdoc : {
-            dist : {
-                src : ['README.md', 'src/**/*.js'],
+            dist: {
+                src: ['README.md'],
                 options: {
-                    destination: 'docs',
-                    encoding : 'utf-8',
-                    recurse : true,
-                    private : true
+                    "template": "node_modules/ink-docstrap/template",
+                    "encoding": "utf8",
+                    "destination": "docs",
+                    "recurse": true,
+                    "private": true,
+                    configure: 'jsdoc.conf.json'
                 }
             }
         },
@@ -57,10 +55,6 @@ module.exports = function(grunt) {
             }
         },
         copy: {
-            html: {
-                src: 'src/<%= pkg.name %>.html',
-                dest: 'build/<%= pkg.name %>-<%= pkg.version %>.html'
-            },
             css: {
                 src: 'src/<%= pkg.name %>.css',
                 dest: 'build/<%= pkg.name %>-<%= pkg.version %>.css'
@@ -79,8 +73,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [
-        'jslint', 'karma',  'jsdoc',
-        'concat', 'cssmin', 'uglify',
-        'copy'
+        'jslint', 'jsdoc', 'concat',
+        'cssmin', 'uglify', 'copy'
     ]);
 };

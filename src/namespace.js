@@ -1,6 +1,6 @@
 if(!window.lt){
     /**
-     * @namespace
+     * @global
      */
     window.lt = {};
 }
@@ -18,4 +18,19 @@ lt.controller = lt.controller || {};
 /**
  * @namespace
  */
+lt.view = lt.view || {};
+
+/**
+ * @namespace
+ */
+lt.template = lt.template || {};
+
+/**
+ * @namespace
+ */
 lt.helper = lt.helper || {};
+
+/**
+ * @namespace
+ */
+lt.util = lt.util || {};

@@ -1,5 +1,5 @@
 /**
- * 옵저빙 헬퍼 객체
+ * 옵저빙 헬퍼
  * @constructor
  */
 lt.helper.Observer = function(){

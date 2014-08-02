@@ -1,45 +1,47 @@
 /**
- * @param {HTMLElement} wrapper
- * @param {lt.model.Images} model
+ * Mover 컨트롤러
+ * @param {lt.view.Mover} view
+ * @param {lt.model.Guide} guide
  * @constructor
  */
-lt.controller.Mover = function(wrapper, model){
-    this.moverWrapper = wrapper;
-    this.upButton = null;
-    this.rightButton = null;
-    this.downButton = null;
-    this.leftButton = null;
+lt.controller.Mover = function(view, guide){
+    if(!(this instanceof lt.controller.Mover)){
+        return new lt.controller.Mover(view, guide);
+    }
+
     this._timeoutTimer = 0;
     this._intervalTimer = 0;
-    this._model = model;
+    this._view = view;
+    this._guide = guide;
 
-    this._assignElements();
-    this._bindEvents();
+    this._initDragger();
+    this._bindUIActions();
 };
 
 lt.controller.Mover.prototype = {
 
     /**
-     * 엘리먼트를 저장한다.
+     * 드래그 가능 하도록 Dragger 헬퍼 모듈을 init 한다.
      * @private
      */
-    _assignElements : function(){
-        this.upButton = this.moverWrapper.querySelector('[data-role=image-pos-up]');
-        this.rightButton = this.moverWrapper.querySelector('[data-role=image-pos-right]');
-        this.downButton = this.moverWrapper.querySelector('[data-role=image-pos-down]');
-        this.leftButton = this.moverWrapper.querySelector('[data-role=image-pos-left]');
+    _initDragger : function(){
+        var identifier = 'LightTable::MoverDragger',
+            dragTarget = this._view.moverWrapper,
+            dragButton = this._view.draggerButton;
+
+        lt.helper.Dragger(identifier, dragTarget, dragButton);
     },
 
     /**
      * 이벤트를 바인딩한다.
      * @private
      */
-    _bindEvents : function(){
-        this.upButton.addEventListener('touchstart', this._onTouchstartUpButton.bind(this));
-        this.rightButton.addEventListener('touchstart', this._onTouchstartRightButton.bind(this));
-        this.downButton.addEventListener('touchstart', this._onTouchstartDownButton.bind(this));
-        this.leftButton.addEventListener('touchstart', this._onTouchstartLeftButton.bind(this));
-        this.moverWrapper.addEventListener('touchend', this._onTouchendMoverWrapper.bind(this));
+    _bindUIActions : function(){
+        this._view.upButton.addEventListener('touchstart', this._onTouchstartUpButton.bind(this));
+        this._view.rightButton.addEventListener('touchstart', this._onTouchstartRightButton.bind(this));
+        this._view.downButton.addEventListener('touchstart', this._onTouchstartDownButton.bind(this));
+        this._view.leftButton.addEventListener('touchstart', this._onTouchstartLeftButton.bind(this));
+        this._view.moverWrapper.addEventListener('touchend', this._onTouchendMoverWrapper.bind(this));
     },
 
     /**
@@ -48,7 +50,6 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _onTouchstartUpButton : function(event){
-        event.stopPropagation();
         event.preventDefault();
 
         this._intervalReposition(function(position){
@@ -63,7 +64,6 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _onTouchstartRightButton : function(event){
-        event.stopPropagation();
         event.preventDefault();
 
         this._intervalReposition(function(position) {
@@ -78,7 +78,6 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _onTouchstartDownButton : function(event){
-        event.stopPropagation();
         event.preventDefault();
 
         this._intervalReposition(function(position){
@@ -93,7 +92,6 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _onTouchstartLeftButton : function(event){
-        event.stopPropagation();
         event.preventDefault();
 
         this._intervalReposition(function(position){
@@ -108,7 +106,6 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _onTouchendMoverWrapper : function(event){
-        event.stopPropagation();
         event.preventDefault();
 
         clearTimeout(this._timeoutTimer);
@@ -142,7 +139,12 @@ lt.controller.Mover.prototype = {
      * @private
      */
     _reposition : function(callback){
-        var position = this._model.position();
-        this._model.position(callback(position));
+        var position = callback({
+            x : this._guide.x(),
+            y : this._guide.y()
+        });
+
+        this._guide.x(position.x);
+        this._guide.y(position.y);
     }
 };

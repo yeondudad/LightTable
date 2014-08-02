@@ -1,0 +1,20 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["./src"],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "templates": {
+        "theme": "cerulean",
+        "navType": "vertical",
+        "linenums": true,
+        "collapseSymbols": false,
+        "inverseNav": false,
+        "outputSourceFiles": true,
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}
